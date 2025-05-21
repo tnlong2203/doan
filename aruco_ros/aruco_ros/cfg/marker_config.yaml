@@ -1,0 +1,5 @@
+marker_ids: [0, 1, 2, 3, 4]
+child_names: ['frame0', 'frame1', 'frame2', 'frame3', 'frame4']
+marker_size: 0.257
+parent_name: "d435i_color_optical_frame"
+# parent_name: "d435i_link"

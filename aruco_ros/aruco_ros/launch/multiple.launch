@@ -1,0 +1,13 @@
+<launch>
+    <arg name="dct_normalization" default="False"/>
+    <arg name="dct_filter_size" default="2"/>
+
+    <node pkg="aruco_ros" type="multiple" name="aruco_simple" output="screen">
+        <rosparam file="$(find aruco_ros)/cfg/marker_config.yaml" command="load"/>
+        <remap from="/camera_info" to="/camera_link/color/camera_info"/>
+        <remap from="/image" to="/camera_link/color/image_raw"/>
+        <param name="image_is_rectified" value="True"/>
+        <param name="normalizeImage" value="$(arg dct_normalization)"/>
+        <param name="dct_components_to_remove" value="$(arg dct_filter_size)"/>
+    </node>
+</launch>
